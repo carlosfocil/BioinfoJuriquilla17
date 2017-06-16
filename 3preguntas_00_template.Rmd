@@ -42,7 +42,7 @@ length(Ucell_lines)
 2. What drug concentrations were used in each study?
 
 ```{r Answer2}
-length(tapply(pharmacoData$concentration, pharmacoData$study, function(x){unique(x)}))
+(tapply(pharmacoData$concentration, pharmacoData$study, function(x){unique(x)}))
 ```
 3. Histograms, appart from telling how is the data
 distributed, can also make evident potential
@@ -60,7 +60,6 @@ expected range according to the definition of viability (e.g. above 0
 and below 100)? Try to come up with explanations about
 the values that are out of range. Are these due to technical
 issues? Biology?
-
 
 
 5. Read the csv file containing the summarized data files. What kind

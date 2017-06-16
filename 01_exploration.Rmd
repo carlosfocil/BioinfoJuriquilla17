@@ -2,8 +2,8 @@
 title: 'Tutorial 1: Exploratory analysis of pharmacogenomic data'
 author: "Alejandro Reyes"
 output:
-  pdf_document: default
   html_document: default
+  pdf_document: default
 ---
 
 ```{r echo=FALSE}
@@ -25,6 +25,16 @@ If you have any question about the code, ask! Also remember that
 science.
 
 Let's start by installing the package that contains the data.
+
+I am adding an example code: The code below is generating a sample of lenght 100 from a normal distribution with mean zero and variance 1
+
+```{r myNewCode}
+x<- rnorm(100,0,1)
+plot(x)
+```
+
+source("http://bioconductor.org/biocLite.R")
+biocLite("devtools")
 
 ```{r readRaw}
 if( !require( PharmPlotter ) ){
@@ -66,7 +76,6 @@ protocol?
 
 ```{r quest6, warning=FALSE}
 library(ggplot2)
-library(cowplot)
 ggplot( pharmacoData, aes( log2(concentration) ) ) +
     geom_histogram(fill = "white", colour="black") +
     facet_wrap(~study)
